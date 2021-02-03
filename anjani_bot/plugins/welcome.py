@@ -1,4 +1,4 @@
-"""User data management"""
+"""Bot Greetings"""
 # Copyright (C) 2020 - 2021  UserbotIndo Team, <https://github.com/userbotindo.git>
 #
 # This program is free software: you can redistribute it and/or modify
@@ -73,29 +73,29 @@ class RawGreeting:
         await parsed_user.get_members(chat_id)
         return parsed_user
 
-    @staticmethod
-    async def welc_pref(chat_id) -> Tuple[bool, str]:
+    @classmethod
+    async def welc_pref(cls, chat_id) -> Tuple[bool, str]:
         """ Get chat welcome setting """
-        setting = await RawGreeting.welcome_db.find_one({'chat_id': chat_id})
+        setting = await cls.welcome_db.find_one({'chat_id': chat_id})
         if setting:
             return (
                 setting["should_welcome"],
-                setting["custom_welcome"] or await RawGreeting._default_welc(chat_id),
+                setting["custom_welcome"] or await cls._default_welc(chat_id),
             )
-        return True, await RawGreeting._default_welc(chat_id)
+        return True, await cls._default_welc(chat_id)
 
-    @staticmethod
-    async def clean_service(chat_id) -> bool:
+    @classmethod
+    async def clean_service(cls, chat_id) -> bool:
         """ Fetch clean service setting """
-        clean = await RawGreeting.welcome_db.find_one({'chat_id': chat_id})
+        clean = await cls.welcome_db.find_one({'chat_id': chat_id})
         if clean:
             return clean["clean_service"]
         return False
 
-    @staticmethod
-    async def set_custom_welcome(chat_id, text):
+    @classmethod
+    async def set_custom_welcome(cls, chat_id, text):
         """ Set custome welcome """
-        await RawGreeting.welcome_db.update_one(
+        await cls.welcome_db.update_one(
             {'chat_id': chat_id},
             {
                 "$set": {
@@ -107,10 +107,10 @@ class RawGreeting:
             upsert=True
         )
 
-    @staticmethod
-    async def set_cleanserv(chat_id, setting):
+    @classmethod
+    async def set_cleanserv(cls, chat_id, setting):
         """ Clean service db """
-        await RawGreeting.welcome_db.update_one(
+        await cls.welcome_db.update_one(
             {'chat_id': chat_id},
             {
                 "$set": {
