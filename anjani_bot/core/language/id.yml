@@ -63,8 +63,8 @@ bot-added: |
   Kami akan menghargai bila anda membuat laporan di grup dukungan kami.
   Terima Kasih 😊
 default-welcome: Hai {first}, Bagaimana kabarmu?\Selamat datang di {chatname}
-clean-serv-set: Mengaktifkan {} service messages cleaning. #????
-cust-welcome-set: Sukses menetapkan pesan selamat datang unik! #????
+clean-serv-set: Mengaktifkan {} layanan pembersihan pesan. #????
+cust-welcome-set: Sukses menetapkan pesan selamat datang yang unik! #????
 #endregion
 #region common-error
 error-chat-private : "**Kesalahan:** `Obrolan Pribadi`\nPerintah ini hanya untuk grup..."
