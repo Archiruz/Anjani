@@ -54,7 +54,21 @@ covid-text : |
 wait-paste : "`Menyalin ke Nekobin...`"
 fail-paste : "`Gagal untuk menyalin ke Nekobin!`"
 #endregion
-#region Error
-error-chat-private : "**kesalahan:** `Obrolan Pribadi`\nPerintah ini hanya untuk grup..."
+#region greetings
+bot-added: |
+  Hai... Terima kasih sudah mengundang saya.
+  Saat ini saya masih dalam tahap pengembangan.
+  Beberapa fitur masih belum ditambahkan dan beberapa akan ditambahkan seiring waktu.
+  Jika Anda menemukan sesuatu yang tidak seharusnya terjadi,
+  Kami akan menghargai bila anda membuat laporan di grup dukungan kami.
+  Terima Kasih 😊
+default-welcome: Hai {first}, Bagaimana kabarmu?\Selamat datang di {chatname}
+clean-serv-set: Mengaktifkan {} service messages cleaning. #????
+cust-welcome-set: Sukses menetapkan pesan selamat datang unik! #????
+#endregion
+#region common-error
+error-chat-private : "**Kesalahan:** `Obrolan Pribadi`\nPerintah ini hanya untuk grup..."
 error-no-rights : "Anda tidak memiliki hak untuk menggunakan perintah ini!"
+err-not-participant: "Pengguna berikut bukan seorang anggota di percakapan ini!"
+err-invalid-option: Pilihan tidak valid!
 #endregion
